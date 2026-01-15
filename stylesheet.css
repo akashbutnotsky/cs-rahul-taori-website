@@ -3538,6 +3538,143 @@ body {
 }
 /* =========================
    MOBILE NAV – SHOW ALL LINKS
+  @media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  /* NAV LINKS */
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  /* CONSULT BUTTON (THIS IS THE MAIN FIX) */
+  .consult-btn {
+    display: none; /* hide from navbar on mobile */
+  }
+
+  /* HERO SECTION */
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-logo {
+    width: 140px;
+    margin: 20px auto 10px;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .title-main {
+    font-size: 34px;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .title-sub {
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    text-align: center;
+  }
+
+  /* MAIN CTA */
+  .hero-consult-btn {
+    width: 90%;
+    max-width: 320px;
+    padding: 14px 0;
+    font-size: 16px;
+    margin-top: 28px;
+  }
+}
+/* =========================
+   MOBILE NAV CENTER FIX
+   ========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR WRAPPER */
+  .navbar {
+    justify-content: center;
+    padding: 12px 10px;
+  }
+
+  /* NAV LINKS CONTAINER */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* INDIVIDUAL LINKS */
+  .nav-links a {
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ACTIVE / HOVER UNDERLINE FIX */
+  .nav-links a::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+/* =========================
+   MOBILE LOGO – PERFECT CIRCLE
+   ========================= */
+@media (max-width: 768px) {
+
+  .logo img,
+  .navbar-logo img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(212, 175, 55, 0.7); /* soft gold */
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+  }
+
+}
+/* =========================
+   MOBILE NAV – SHOW ALL LINKS
    ========================= */
 @media (max-width: 768px) {
 
@@ -3561,190 +3698,35 @@ body {
   }
 
 }
----------------------------
+/* ---------------------------
+   NAVBAR BASE (PC SAFE)
+---------------------------- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* ---------------------------
    HAMBURGER ICON
 ---------------------------- */
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 2.5px;
-  background: #f4c35f;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* ---------------------------
-   NAV LINKS (PC)
----------------------------- */
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 28px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  position: relative;
-}
-
-/* ---------------------------
-   MOBILE STYLES
----------------------------- */
-[6:03 pm, 15/01/2026] akash: * Mobile menu default hidden */
+/* Mobile menu default hidden */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #0b1a2c;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 14px 0;
-  }
 
   .hamburger {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    cursor: pointer;
     position: absolute;
-    right: 20px;
     top: 22px;
-    z-index: 1000;
-  }
-
-  .hamburger span {
-    width: 26px;
-    height: 3px;
-    background: #f1c40f;
-    border-radius: 2px;
-  }
-}
-[6:05 pm, 15/01/2026] akash: /* Mobile menu default hidden */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #0b1a2c;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 14px 0;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    position: absolute;
     right: 20px;
-    top: 22px;
-    z-index: 1000;
-  }
-
-  .hamburger span {
-    width: 26px;
-    height: 3px;
-    background: #f1c40f;
-    border-radius: 2px;
-  }
-}
-/* ===== FIX MOBILE NAVBAR PROPERLY ===== */
-@media (max-width: 768px) {
-
-  header.navbar {
-    position: relative;
-    padding: 16px 20px;
-  }
-
-  /* Hide nav by default */
-  #navLinks {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-
-    width: 100%;
-    background: rgba(10, 20, 40, 0.98);
-    backdrop-filter: blur(10px);
-
-    padding: 20px 0;
-    gap: 18px;
-
-    z-index: 999;
-  }
-
-  /* Show when active */
-  #navLinks.active {
-    display: flex;
-  }
-
-  #navLinks li {
-    list-style: none;
-  }
-
-  #navLinks li a {
-    font-size: 18px;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-  }
-
-  #navLinks li a:hover {
-    color: #f4c430;
-  }
-
-  /* Hamburger placement */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
-    position: absolute;
-    right: 20px;
-    top: 22px;
-
+    z-index: 1001;
     cursor: pointer;
-    z-index: 1000;
   }
 
   .hamburger span {
@@ -3754,9 +3736,31 @@ body {
     border-radius: 2px;
   }
 
-  /* Hide consult button from navbar on mobile */
-  .consult-btn {
+  #navLinks {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 20, 40, 0.98);
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    z-index: 1000;
+  }
+
+  #navLinks.active {
+    display: flex;
   }
 }
 
+/* Desktop safe */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  #navLinks {
+    display: flex !important;
+    position: static;
+  }}
