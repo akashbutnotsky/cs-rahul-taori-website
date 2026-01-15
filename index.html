@@ -185,19 +185,24 @@
 
 </section>
 
-</body>
-</html>
-
-</div>
 <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
 
-  hamburger.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
+    if (!hamburger || !navLinks) {
+      console.error("Hamburger or navLinks not found");
+      return;
+    }
+
+    hamburger.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    });
   });
 </script>
 
 </body>
 
 </html>
+
