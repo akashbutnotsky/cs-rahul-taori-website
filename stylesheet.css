@@ -3484,4 +3484,39 @@ body {
     margin-top: 28px;
   }
 }
+/* =========================
+   MOBILE NAV CENTER FIX
+   ========================= */
+@media (max-width: 768px) {
 
+  /* NAVBAR WRAPPER */
+  .navbar {
+    justify-content: center;
+    padding: 12px 10px;
+  }
+
+  /* NAV LINKS CONTAINER */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* INDIVIDUAL LINKS */
+  .nav-links a {
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ACTIVE / HOVER UNDERLINE FIX */
+  .nav-links a::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
