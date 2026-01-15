@@ -3602,44 +3602,85 @@ body {
 /* ---------------------------
    MOBILE STYLES
 ---------------------------- */
-
+[6:03 pm, 15/01/2026] akash: * Mobile menu default hidden */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0b1a2c;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+  }
 
-  /* show hamburger */
-  .hamburger {
+  .nav-links.active {
     display: flex;
   }
 
-  /* hide nav by default */
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    width: 90%;
-    max-width: 340px;
-    background: rgba(10, 20, 40, 0.95);
-    border-radius: 16px;
-    padding: 20px 0;
+  .nav-links li {
+    text-align: center;
+    padding: 14px 0;
+  }
+
+  .hamburger {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.35s ease;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    gap: 6px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    z-index: 1000;
   }
 
-  /* menu active */
-  .nav-links.active {
-    opacity: 1;
-    transform: translateX(-50%) translateY(10px);
-    pointer-events: auto;
-  }
-
-  .nav-links li a {
-    font-size: 18px;
-    padding: 6px 0;
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: #f1c40f;
+    border-radius: 2px;
   }
 }
+[6:05 pm, 15/01/2026] akash: /* Mobile menu default hidden */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0b1a2c;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 999;
+  }
 
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 14px 0;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    z-index: 1000;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: #f1c40f;
+    border-radius: 2px;
+  }
+}
