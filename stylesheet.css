@@ -3520,3 +3520,20 @@ body {
   }
 
 }
+/* =========================
+   MOBILE LOGO – PERFECT CIRCLE
+   ========================= */
+@media (max-width: 768px) {
+
+  .logo img,
+  .navbar-logo img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(212, 175, 55, 0.7); /* soft gold */
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+  }
+
+}
+
