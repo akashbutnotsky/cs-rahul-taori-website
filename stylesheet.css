@@ -3764,3 +3764,74 @@ body {
     display: flex !important;
     position: static;
   }}
+/* ===== DESKTOP NAVBAR (DEFAULT) ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none; /* HIDDEN on desktop */
+}
+/* =========================
+   MOBILE NAVBAR ONLY
+========================= */
+
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: #f4c430;
+    border-radius: 2px;
+  }
+
+  /* Hide menu by default */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 20, 40, 0.97);
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 24px 0;
+    z-index: 1000;
+  }
+
+  /* When hamburger clicked */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+}
