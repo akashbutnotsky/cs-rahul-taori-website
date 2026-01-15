@@ -3561,5 +3561,85 @@ body {
   }
 
 }
+---------------------------
+   HAMBURGER ICON
+---------------------------- */
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2.5px;
+  background: #f4c35f;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ---------------------------
+   NAV LINKS (PC)
+---------------------------- */
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+
+/* ---------------------------
+   MOBILE STYLES
+---------------------------- */
+
+@media (max-width: 768px) {
+
+  /* show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* hide nav by default */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 90%;
+    max-width: 340px;
+    background: rgba(10, 20, 40, 0.95);
+    border-radius: 16px;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  }
+
+  /* menu active */
+  .nav-links.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+    pointer-events: auto;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding: 6px 0;
+  }
+}
 
