@@ -3536,4 +3536,30 @@ body {
   }
 
 }
+/* =========================
+   MOBILE NAV – SHOW ALL LINKS
+   ========================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;              /* KEY FIX */
+    justify-content: center;
+    align-items: center;
+    gap: 14px 18px;               /* row gap | column gap */
+    max-width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 4px;
+    white-space: nowrap;
+  }
+
+}
+
 
