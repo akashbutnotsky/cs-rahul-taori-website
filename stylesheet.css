@@ -3835,3 +3835,277 @@ body {
     font-size: 18px;
   }
 }
+
+/* ---------------------------
+   HAMBURGER ICON
+---------------------------- */
+
+/* Mobile menu default hidden */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: #f4c430;
+    border-radius: 2px;
+  }
+
+  #navLinks {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 20, 40, 0.98);
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    z-index: 1000;
+  }
+
+  #navLinks.active {
+    display: flex;
+  }
+}
+
+/* Desktop safe */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  #navLinks {
+    display: flex !important;
+    position: static;
+  }}
+  /* ===== DESKTOP NAVBAR (DEFAULT) ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none; /* HIDDEN on desktop */
+}
+/* =======================
+   RESET
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background: radial-gradient(circle at top, #0f2a3a, #050b18);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* =======================
+   NAVBAR (DESKTOP)
+======================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    to right,
+    rgba(10, 30, 50, 0.95),
+    rgba(8, 18, 32, 0.95)
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 215, 100, 0.15);
+}
+
+/* BRAND */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LOGO CIRCLE */
+.nav-brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 215, 120, 0.8);
+  box-shadow: 0 0 12px rgba(255, 215, 120, 0.4);
+}
+
+/* TITLE */
+.nav-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.nav-title .amp {
+  color: #f4c96f;
+}
+
+/* =======================
+   NAV LINKS (DESKTOP)
+======================= */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #f4c96f;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* CONSULT BUTTON */
+.consult-btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 14px rgba(255, 215, 120, 0.6);
+}
+
+/* =======================
+   HAMBURGER (MOBILE)
+======================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #f4c96f;
+  border-radius: 2px;
+}
+
+/* =======================
+   MOBILE STYLES
+======================= */
+@media (max-width: 900px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop nav */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 30, 50, 0.98),
+      rgba(8, 18, 32, 0.98)
+    );
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    display: none;
+  }
+
+  /* Toggle ON */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Hide consult button on mobile top */
+  .consult-btn {
+    display: none;
+  }
+
+  /* Center brand */
+  .nav-brand {
+    gap: 10px;
+  }
+
+  .nav-title {
+    font-size: 16px;
+  }
+}
+
+/* =======================
+   CONTACT CTA BUTTON
+======================= */
+.contact-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow:
+    0 0 12px rgba(255, 215, 120, 0.4),
+    0 0 24px rgba(255, 215, 120, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 14px rgba(255, 215, 120, 0.6),
+    0 0 30px rgba(255, 215, 120, 0.35);
+}
