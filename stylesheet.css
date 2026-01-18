@@ -1118,6 +1118,9 @@ section::after {
 /* ===============================
    ULTRA GLOW CTA BUTTON
 ================================ */
+/* ================================
+   FINAL CTA BUTTON – CLEAN & PREMIUM
+   ================================ */
 
 .contact-cta {
   position: relative;
@@ -1126,7 +1129,8 @@ section::after {
   border-radius: 999px;
 
   font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 15px;
+  letter-spacing: 0.6px;
   color: #2a1f00;
   text-decoration: none;
 
@@ -1137,78 +1141,43 @@ section::after {
     #f7b733
   );
 
-  /* 🔥 CORE BORDER GLOW */
+  /* SINGLE, SOFT GLOW (NO FOG) */
   box-shadow:
-    0 0 0 2px rgba(255,215,100,0.9),
-    0 0 18px rgba(255,215,100,0.95),
-    0 0 42px rgba(255,215,100,0.85),
-    0 0 90px rgba(255,215,100,0.7);
+    0 0 0 1.5px rgba(255, 215, 100, 0.55),
+    0 0 14px rgba(255, 215, 100, 0.45);
 
-  animation: borderPulse 2.8s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* 🔁 BORDER BREATHING */
-@keyframes borderPulse {
-  0%, 100% {
-    box-shadow:
-      0 0 0 2px rgba(255,215,100,0.9),
-      0 0 18px rgba(255,215,100,0.95),
-      0 0 42px rgba(255,215,100,0.85),
-      0 0 90px rgba(255,215,100,0.7);
-  }
-  50% {
-    box-shadow:
-      0 0 0 3px rgba(255,225,130,1),
-      0 0 30px rgba(255,225,130,1),
-      0 0 70px rgba(255,215,100,0.95),
-      0 0 140px rgba(255,215,100,0.85);
-  }
-}
-
-/* ✨ SHARP GOLD BORDER RING */
-.contact-cta::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: inherit;
-
-  background: linear-gradient(
-    135deg,
-    rgba(255,235,170,1),
-    rgba(255,200,80,1),
-    rgba(255,235,170,1)
-  );
-
-  filter: blur(6px);
-  opacity: 0.95;
-  z-index: -1;
-}
-
-/* ✨ SOFT OUTER AURA */
-.contact-cta::after {
-  content: "";
-  position: absolute;
-  inset: -22px;
-  border-radius: inherit;
-
-  background: radial-gradient(
-    circle,
-    rgba(255,215,100,0.6),
-    transparent 70%
-  );
-
-  filter: blur(28px);
-  z-index: -2;
-}
-
-/* 🚀 HOVER = PREMIUM POP */
+/* SUBTLE HOVER (DESKTOP) */
 .contact-cta:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
   box-shadow:
-    0 0 0 3px rgba(255,235,170,1),
-    0 0 45px rgba(255,235,170,1),
-    0 0 90px rgba(255,215,100,1),
-    0 0 180px rgba(255,215,100,0.9);
+    0 0 0 2px rgba(255, 215, 100, 0.7),
+    0 0 20px rgba(255, 215, 100, 0.55);
+}
+
+/* ================================
+   MOBILE – MINIMAL, NEAR-FLAT
+   ================================ */
+@media (max-width: 600px) {
+  .contact-cta {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 28px auto 0;
+
+    padding: 14px 0;
+    font-size: 14px;
+
+    /* FLAT, PROFESSIONAL DEPTH */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .contact-cta:hover {
+    transform: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
 }
 /* =========================
    ABOUT US – PREMIUM BOX
@@ -2822,7 +2791,6 @@ section.about .about-box {
   box-shadow: 0 18px 45px rgba(255, 215, 0, 0.55);
   transition: all 0.35s ease;
 }
-
 .contact-cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 26px 60px rgba(255, 215, 0, 0.75);
@@ -3749,15 +3717,7 @@ body {
 }
 
 /* CONSULT BUTTON */
-.consult-btn {
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #f6d365, #fda085);
-  color: #111;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 0 14px rgba(255, 215, 120, 0.6);
-}
+
 
 /* =======================
    HAMBURGER (MOBILE)
@@ -3826,24 +3786,176 @@ body {
 /* =======================
    CONTACT CTA BUTTON
 ======================= */
-.contact-cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 16px 36px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #f6d365, #fda085);
-  color: #111;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow:
-    0 0 12px rgba(255, 215, 120, 0.4),
-    0 0 24px rgba(255, 215, 120, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+.about-box {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  text-align: center;
 }
 
-.contact-cta:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 0 14px rgba(255, 215, 120, 0.6),
-    0 0 30px rgba(255, 215, 120, 0.35);
+.about-box p {
+  margin-bottom: 16px;
+  line-height: 1.7;
 }
+
+/* Fix bullet alignment + centering */
+.about-list {
+  list-style-position: inside;   /* moves dots inside content */
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.about-list li {
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+.facts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.fact-box h3 {
+  font-size: 36px;      /* numbers like 300+, 500+ */
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.fact-box h4 {
+  font-size: 18px;      /* NGOs, DSCs, Authorities */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+/* ===== OUR FACTS SECTION ===== */
+
+.facts {
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Gold underline */
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #d4af37;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid layout */
+.facts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Fact cards */
+.fact-box {
+  text-align: center;
+  padding: 35px 25px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle hover (premium feel) */
+.fact-box:hover {
+  transform: translateY(-6px);
+}
+
+/* Numbers */
+.fact-box h3 {
+  font-size: 42px;
+  font-weight: 600;
+  color: #d4af37;
+  margin-bottom: 6px;
+}
+
+/* Labels (NGOs / DSCs / Authorities) */
+.fact-box h4 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+/* Small divider under label */
+.fact-box h4::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: rgba(212, 175, 55, 0.6);
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Description */
+.fact-box p {
+  font-size: 14.5px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .facts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .facts-container {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-cta {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 38px;
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #f2c66d, #e3a94a);
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+
+  box-shadow: 0 0 14px rgba(227, 169, 74, 0.35);
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .contact-cta {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 28px auto 0;
+
+    padding: 13px 0;
+    font-size: 14px;
+
+    /* VERY subtle depth, not glow */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .contact-cta:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+    transform: none;
+  }}
